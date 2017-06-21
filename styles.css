@@ -8,12 +8,23 @@ body {
     text-align: center;
     font-family: "Arial";
 }
+
 ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
     background-color: #630525;
+}
+
+body {
+  padding-top: 60px;
+}
+
+@media (max-width: 979px) {
+  body {
+    padding-top: 0px;
+  }
 }
 
 li {
@@ -29,6 +40,20 @@ li a {
 }
 
 /* Change the link color to #111 (black) on hover */
-li a:hover {
+li:hover {
     background-color: #350314;
+    color: white;
+}
+
+.box {
+    border: 4px #630525 solid;
+    font-family: 'Roboto Slab', serif;
+}
+
+.row + .row {
+   border-top:0;
+}
+
+.section {
+    font-size: 25px;
 }
