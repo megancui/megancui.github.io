@@ -99,8 +99,8 @@ li:hover {
 	}
 
 .flip-container, .front, .back {
-	width: auto;
-	height: auto;
+	width: inherit;
+	height: inherit;
 }
 
 /* flip speed goes here */
