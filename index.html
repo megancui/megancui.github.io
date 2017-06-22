@@ -47,7 +47,7 @@
             
             <div class="col-sm-5 box" id="debater" onclick="debater()">debater</div>
             
-            <div class="col-sm-5 box" id="debater-details" style="display: none; height: auto;">
+            <div class="col-sm-5 box details" id="debater-details" style="display: none; height: 33%" onclick="backdebater()">
               <ul>
                 <li>public forum debater</li>
                 <li>'17 ndf camp attendee</li>
@@ -61,16 +61,22 @@
         </div>
         
       </div>
-    
+    c
   </div>
   
   <script>
     function debater() {
       console.log("test");
-      document.getElementById("debater").display = "none";
-      document.getElementById("debater").height = "auto";
-      document.getElementById("debater-details").display = "inline";
-      
+      document.getElementById("debater").style.display = "none";
+      document.getElementById("debater").style.height = "auto";
+      document.getElementById("debater-details").style.display = "flex";
+    }
+    
+    function backdebater() {
+      console.log("test");
+      document.getElementById("debater").style.display = "flex";
+      document.getElementById("debater").style.height = "33%";
+      document.getElementById("debater-details").style.display = "none";
     }
     
     
