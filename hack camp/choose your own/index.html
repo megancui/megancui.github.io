@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Choose Your Own Adventure</title>
+  </head>
+  <body>
+      <h2>Choose Your Own Adventure!</h2>
+    <p id="scenario">You see a bear while on a stroll. You... </p>
+    <p id="optionA">A. Run away from the bear.</p>
+    <p id="optionB">B. Fight the bear.</p>
+    <form action=""> 
+      <input type="radio" name="option" id="a"><span id="aspan">Option A &nbsp;&nbsp;</span>
+      <input type="radio" name="option" id="b"><span id="bspan">Option B</span>
+    </form><br>
+    <button id="submit">Go!</button>
+    
+    <script> //beginning of my internal javascript file (make sure kids use and link external one)
+    
+    //notes for html file:
+    //make sure you use either radio buttons or select tags for the options
+    //you can use a button for submit though, like i did
+    //there is no </input> for input radio buttons
+    //radio buttons have to have the same name or else they won't work
+    
+    //first define all variables for easier continuous use
+    var a = document.getElementById("a");
+    var b = document.getElementById("b");
+    var scenario = document.getElementById("scenario");
+    var go = document.getElementById("submit");
+    var optionA = document.getElementById("optionA");
+    var optionB = document.getElementById("optionB");
+    
+        go.onclick = function () { //once go button has been clicked
+            if (a.checked) { //if option a is checked/selected...
+                a.checked = false; //... then do this stuff
+                b.checked = false; //want to mark these buttons as unchecked to refresh for next choice
+                scenario.innerHTML = "You ran away from the bear and see a lake. You...";
+                optionA.innerHTML = "A. Swim in the lake.";
+                optionB.innerHTML = "B. Run around the lake.";
+                
+                //above are the new options and scenario
+                
+                go.onclick = function () { //now start a new scenario, go button is clicked again
+                    
+                    if (b.checked) { //if option b is checked
+                        a.checked = false;
+                        b.checked = false;
+                        scenario.innerHTML = "You ran around the lake and avoided trouble. Now you're hungry...";
+                        optionA.innerHTML = "A. Eat random berries found on the trail.";
+                        optionB.innerHTML = "B. Stay hungry and hopeful.";
+                        
+                        //ended my code here, you can go as far as you want.
+                        //need to emphasize good tabbing standards to make it readable
+                    }
+                };
+            }
+            else { //i decided to end the game for my player here...
+                scenario.innerHTML = "You got kidnapped by the bear! Try again."; //telling user
+                go.innerHTML = "Try Again"; //renaming button for multiple uses
+                optionA.innerHTML = ""; //resetting the paragraph tags so nothing shows up
+                optionB.innerHTML = ""; //bc you ended the game, no more options
+                
+                document.getElementById("aspan").innerHTML=""; //bc radio btns don't have input ending tag, you have to put the text inside of <span> tags to be able to clear those span tags
+                document.getElementById("bspan").innerHTML="";
+                
+                a.remove(); //now you want to physically remove the actual clickable btn part
+                b.remove(); //of the radio buttons (that have no text anymore)
+                
+                go.onclick = function () { //"go" is actually displayed as "Try Again" so users click it when they want to try again
+                    window.location.reload(); //on click, it launches a window refresh which refreshes the page completely and puts you at the beginning of the code again
+                };
+            
+        }
+        
+        
+    };
+    </script>
+  </body>
+</html>

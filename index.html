@@ -22,7 +22,7 @@
   <nav class="navbar navbar-fixed-top navbar-default">
       <div class="container-fluid">
         <div class="navbar-header">
-          <a class="navbar-brand" href="index.html">megan cui</a>
+          <a class="navbar-brand" href="index.html">megan cui || junior @ william mason hs</a>
         </div>
         <!--<ul class="nav navbar-nav">-->
         <!--  <li class="active"><a href="index.html">home</a></li>-->
@@ -35,29 +35,53 @@
   <div class="container-fluid">
 
           <div class="row">
-            <div class="col-sm-8 box">junior @ william mason hs</div>
+            <div class="col-sm-8 box">my story in blocks:</div>
             <div class="col-sm-4 box" id="adventurer">adventurer</div>
 
-            <div class="front col-sm-3 box">musician</div>
-            
-            
+            <div class="col-sm-3 box" id="musician">musician</div>
+            <!--<div class="col-sm-3 box details back" id="debater-details" onclick="backdebater()">-->
+            <!--          <ul>-->
+            <!--            <li>'17 omea all-state band, flute, third chair</li>-->
+            <!--            <li>mason hs wind symphony, flute</li>-->
+            <!--            <li>'17 csyo concert, flute</li>-->
+            <!--            <li>'17 southwest regional orch, flute</li>-->
+            <!--            <li>hulusi performer around greater cincy</li>-->
+            <!--          </ul>-->
+            <!--    </div>-->
             
             
             <a id="cat-lover" href="cat.html"><div class="col-sm-4 box" id="cat-lover">cat lover</div></a>
-            
-            <div class="col-sm-5 box" id="debater" onclick="debater()">debater</div>
-            
-            <div class="col-sm-5 box details" id="debater-details" style="display: none; height: 33%" onclick="backdebater()">
-              <ul>
-                <li>public forum debater</li>
-                <li>'17 ndf camp attendee</li>
-                <li>'17-'18 mason intermediate officer</li>
-                <li>'17 speak week instructor</li>
-              </ul>
+            <div class="flip-container">
+              <div class="flipper">
+                <div class="col-sm-5 box front" id="debater" onclick="debater()">debater</div>
+                
+                <div class="col-sm-5 box details back" id="debater-details" onclick="backdebater()">
+                  <ul>
+                    <li>public forum debater</li>
+                    <li>'17 ndf camp attendee</li>
+                    <li>'17-'18 mason intermediate officer</li>
+                    <li>'17 speak week instructor</li>
+                  </ul>
+                </div>
+              </div>
             </div>
             
-            <div class="col-sm-6 box">programmer</div>
-            <div class="col-sm-6 box">writer</div>
+            <!--<div class="flip-container">-->
+            <!--  <div class="flipper">-->
+                <div class="col-sm-6 box" id="programmer">programmer</div>
+            <!--    <div class="col-sm-6 box details back" id="debater-details" onclick="backdebater()">-->
+            <!--          <ul>-->
+            <!--            <li>mason hack club co-founder/president</li>-->
+            <!--            <li>fall '16 revolutionuc best hs hack</li>-->
+            <!--            <li>spring '17 revolutionuc third prize</li>-->
+            <!--            <li>'17 mason hack camp organizer</li>-->
+            <!--          </ul>-->
+            <!--    </div>-->
+            <!--  </div>-->
+            <!--</div>-->
+            
+            
+            <div class="col-sm-6 box" id="writer">writer</div>
         </div>
         
       </div>
@@ -65,21 +89,24 @@
   </div>
   
   <script>
-    function debater() {
-      console.log("test");
-      document.getElementById("debater").style.display = "none";
-      document.getElementById("debater").style.height = "auto";
-      document.getElementById("debater-details").style.display = "flex";
-    }
+    // function debater() {
+    //   document.getElementById("debater").style.display = "none";
+    //   document.getElementById("debater").style.height = "auto";
+    //   document.getElementById("debater-details").style.display = "flex";
+    // }
     
-    function backdebater() {
-      console.log("test");
-      document.getElementById("debater").style.display = "flex";
-      document.getElementById("debater").style.height = "33%";
-      document.getElementById("debater-details").style.display = "none";
-    }
+    // function backdebater() {
+    //   console.log("test");
+    //   document.getElementById("debater").style.display = "flex";
+    //   document.getElementById("debater").style.height = "33%";
+    //   document.getElementById("debater-details").style.display = "none";
+    // }
     
-    
+    document.getElementsByClassName('flip-container')[0].addEventListener('click', function() {
+	document.getElementsByClassName('front')[0].style.transform = "rotateY(180deg)";
+  document.getElementsByClassName('back')[0].style.transform = "rotateY(0deg)";
+  
+});
   </script>
 </body>
 
